@@ -29,4 +29,17 @@
 
         return result;
     }
+
+    prettyPrint(root, prefix = '', isLeft = true) {
+        if (root === null) {
+            return;
+        }
+        if (root.right !== null) {
+            this.prettyPrint(root.right, `${prefix}${isLeft ? '│   ' : '    '}`, false);
+        }
+        console.log(`${prefix}${isLeft ? '└── ' : '┌── '}${root.val}`);
+        if (root.left !== null) {
+            this.prettyPrint(root.left, `${prefix}${isLeft ? '    ' : '│   '}`, true);
+        }
+    };
  }
