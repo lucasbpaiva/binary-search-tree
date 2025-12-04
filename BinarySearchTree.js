@@ -13,7 +13,7 @@
 
     buildTree(array) {
         // converts array to a height-balanced binary search tree
-        const sortedUniqueArray = [...new Set(originalArray)].sort((a, b) => a - b);
+        const sortedUniqueArray = [...new Set(array)].sort((a, b) => a - b);
         return this.sortedArrayToBST(sortedUniqueArray);
     }
 
