@@ -12,13 +12,13 @@
     }
 
     buildTree(array) {
-        // converts array to a height-balanced binary search tree
+        // converts array to a height-balanced BST (binary search tree)
         const sortedUniqueArray = [...new Set(array)].sort((a, b) => a - b);
         return this.sortedArrayToBST(sortedUniqueArray);
     }
 
     sortedArrayToBST(array) {
-        // converts sorted array without duplicates to a height-balanced binary search tree
+        // converts sorted array without duplicates to a height-balanced BST
         if (array.length === 0) return null;
         
         let mid = Math.floor(array.length / 2);
@@ -30,7 +30,21 @@
         return result;
     }
 
+    insert(root, val) {
+        // insert a new node with given value in the BST
+        if (root === null) {
+            return new Node(val);
+        }
+        if (val < root.val) {
+            root.left = this.insert(root.left, val);
+        } else {
+            root.right = this.insert(root.right, val);
+        }
+        return root;
+    }
+
     prettyPrint(root, prefix = '', isLeft = true) {
+        // console.log the BST in a structured format
         if (root === null) {
             return;
         }
