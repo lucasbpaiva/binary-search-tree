@@ -5,3 +5,9 @@
         this.right = (right === undefined ? null : right);
     }
  }
+
+ export class Tree {
+    constructor(array) {
+        this.root = this.buildTree(array);
+    }
+ }
