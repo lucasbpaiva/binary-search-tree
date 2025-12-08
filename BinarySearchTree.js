@@ -95,18 +95,30 @@
         return root;
     }
 
-    levelOrderForEach(callback) {
-        // traverse the tree in breadth-first level order and call the callback on each node
+    // traverse the tree in breadth-first level order and call the callback on each node
+    levelOrderForEach(root, callback) {
         if (typeof callback !== 'function') {
             throw new Error("No valid callback function provided.");
         }
-        if (this.root === null) return;
-        const q = [this.root];
+        if (root === null) return;
+        const q = [root];
         while (q.length > 0) {
             const current = q.shift();
             callback(current);
             if (current.left) q.push(current.left);
             if (current.right) q.push(current.right);
+        }
+    }
+
+    // traverse the tree inorder and call the callback on each node
+    inOrderForEach(root, callback) {
+        if (typeof callback !== 'function') {
+            throw new Error("No valid callback function provided.");
+        }
+        if (root !== null) {
+            this.inOrderForEach(root.left, callback);
+            callback(root);
+            this.inOrderForEach(root.right, callback);
         }
     }
 
