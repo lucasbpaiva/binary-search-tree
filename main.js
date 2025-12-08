@@ -9,3 +9,9 @@ console.log("--------------------------------------------------");
 console.log("Add new node 31:\n");
 myTree.insert(myTree.root, 31);
 myTree.prettyPrint(myTree.root);
+
+//test deletion
+console.log("--------------------------------------------------");
+console.log("Delete node 8:\n");
+myTree.deleteNode(myTree.root, 8);
+myTree.prettyPrint(myTree.root);
