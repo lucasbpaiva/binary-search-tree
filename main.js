@@ -41,6 +41,10 @@ myTree.prettyPrint(myTree.root);
 // myTree.preOrderForEach(myTree.root, printValue);
 
 //test preOrderForeach
+// console.log("--------------------------------------------------");
+// console.log("Print value of every node (postorder):\n");
+// myTree.postOrderForEach(myTree.root, printValue);
+
+//test height
 console.log("--------------------------------------------------");
-console.log("Print value of every node (postorder):\n");
-myTree.postOrderForEach(myTree.root, printValue);
+console.log(`Height of binary tree: ${myTree.height(myTree.root.val)}`);
