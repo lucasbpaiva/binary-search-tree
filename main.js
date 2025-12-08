@@ -15,3 +15,8 @@ console.log("--------------------------------------------------");
 console.log("Delete node 8:\n");
 myTree.deleteNode(myTree.root, 8);
 myTree.prettyPrint(myTree.root);
+
+//test search
+console.log("--------------------------------------------------");
+console.log("Find node 67:\n");
+myTree.prettyPrint(myTree.find(myTree.root, 67));
