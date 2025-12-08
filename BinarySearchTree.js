@@ -95,6 +95,21 @@
         return root;
     }
 
+    levelOrderForEach(callback) {
+        // traverse the tree in breadth-first level order and call the callback on each node
+        if (typeof callback !== 'function') {
+            throw new Error("No valid callback function provided.");
+        }
+        if (this.root === null) return;
+        const q = [this.root];
+        while (q.length > 0) {
+            const current = q.shift();
+            callback(current);
+            if (current.left) q.push(current.left);
+            if (current.right) q.push(current.right);
+        }
+    }
+
     // console.log the BST in a structured format
     prettyPrint(root, prefix = '', isLeft = true) {
         if (root === null) {
