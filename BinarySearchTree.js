@@ -81,6 +81,20 @@
         return root;
     }
 
+    // returns the node with the given value or null if not found
+    find(root, val) {
+        if (root === null) {
+            return null;
+        }
+        if (val < root.val) {
+            return this.find(root.left, val);
+        } 
+        if (val > root.val) {
+            return this.find(root.right, val);
+        }
+        return root;
+    }
+
     // console.log the BST in a structured format
     prettyPrint(root, prefix = '', isLeft = true) {
         if (root === null) {
