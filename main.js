@@ -26,6 +26,11 @@ myTree.prettyPrint(myTree.root);
 // myTree.prettyPrint(myTree.find(myTree.root, 67));
 
 //test levelOrderForeach
+// console.log("--------------------------------------------------");
+// console.log("Print value of every node (level order):\n");
+// myTree.levelOrderForEach(myTree.root, printValue);
+
+//test inOrderForeach
 console.log("--------------------------------------------------");
-console.log("Print value of every node:\n");
-myTree.levelOrderForEach(printValue);
+console.log("Print value of every node (inorder):\n");
+myTree.inOrderForEach(myTree.root, printValue);
