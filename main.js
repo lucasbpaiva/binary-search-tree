@@ -36,6 +36,11 @@ myTree.prettyPrint(myTree.root);
 // myTree.inOrderForEach(myTree.root, printValue);
 
 //test preOrderForeach
+// console.log("--------------------------------------------------");
+// console.log("Print value of every node (preorder):\n");
+// myTree.preOrderForEach(myTree.root, printValue);
+
+//test preOrderForeach
 console.log("--------------------------------------------------");
-console.log("Print value of every node (preorder):\n");
-myTree.preOrderForEach(myTree.root, printValue);
+console.log("Print value of every node (postorder):\n");
+myTree.postOrderForEach(myTree.root, printValue);
