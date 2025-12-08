@@ -146,6 +146,21 @@
         }
     }
 
+    // given the root of a binary tree, return its maximum depth
+    maxHeight(root) {
+        if (root === null) {
+            return -1;
+        }
+        return 1 + Math.max(this.maxHeight(root.left), this.maxHeight(root.right));
+    }
+
+    // returns the height of the node containing the given value
+    height(val) {
+        let node = this.find(this.root, val);
+        if (node === null) return null;
+        return this.maxHeight(node);
+    }
+
     // console.log the BST in a structured format
     prettyPrint(root, prefix = '', isLeft = true) {
         if (root === null) {
