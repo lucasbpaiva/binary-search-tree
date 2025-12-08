@@ -122,6 +122,18 @@
         }
     }
 
+    // traverse the tree preorder and call the callback on each node
+    preOrderForEach(root, callback) {
+        if (typeof callback !== 'function') {
+            throw new Error("No valid callback function provided.");
+        }
+        if (root !== null) {
+            callback(root);
+            this.preOrderForEach(root.left, callback);
+            this.preOrderForEach(root.right, callback);
+        }
+    }
+
     // console.log the BST in a structured format
     prettyPrint(root, prefix = '', isLeft = true) {
         if (root === null) {
