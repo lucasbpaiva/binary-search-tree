@@ -110,6 +110,21 @@
         }
     }
 
+    // return array with the inorder traversal 
+    #inOrderTraversal(root) {
+        const result = [];
+        this.#helperTraversal(root, result);
+        return result;
+    }
+
+    #helperTraversal(root, result) {
+        if (root !== null) {
+            this.#helperTraversal(root.left, result);
+            result.push(root.val);
+            this.#helperTraversal(root.right, result);
+        }
+    }
+
     // traverse the tree inorder and call the callback on each node
     inOrderForEach(root, callback) {
         if (typeof callback !== 'function') {
@@ -183,6 +198,15 @@
         const diff = this.#maxHeight(root.left) - this.#maxHeight(root.right);
         return Math.abs(diff) > 1 ? false : this.isBalanced(root.left) && this.isBalanced(root.right);
     };
+
+    // rebalance BST with the same node values
+    rebalance() {
+        if (this.isBalanced(this.root)) {
+            return this.root;
+        }
+        const sortedArray = this.#inOrderTraversal(this.root);
+        this.root = this.sortedArrayToBST(sortedArray);
+    }
 
     // console.log the BST in a structured format
     prettyPrint(root, prefix = '', isLeft = true) {
