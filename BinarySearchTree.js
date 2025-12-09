@@ -177,6 +177,13 @@
         return this.#findNodeDepth(this.root, val);
     }
 
+    // determine if the tree is height-balanced
+    isBalanced(root) {
+        if (root === null) return true;
+        const diff = this.#maxHeight(root.left) - this.#maxHeight(root.right);
+        return Math.abs(diff) > 1 ? false : this.isBalanced(root.left) && this.isBalanced(root.right);
+    };
+
     // console.log the BST in a structured format
     prettyPrint(root, prefix = '', isLeft = true) {
         if (root === null) {
