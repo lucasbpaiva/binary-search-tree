@@ -9,56 +9,58 @@ const myTree = new Tree(nums);
 myTree.prettyPrint(myTree.root);
 
 // test insertion
-// console.log("--------------------------------------------------");
-// console.log("Add new node 31:\n");
-// myTree.insert(myTree.root, 31);
-// myTree.prettyPrint(myTree.root);
+console.log("--------------------------------------------------");
+console.log("Add new node 31:\n");
+myTree.insert(myTree.root, 31);
+myTree.prettyPrint(myTree.root);
 
 //test deletion
-// console.log("--------------------------------------------------");
-// console.log("Delete node 8:\n");
-// myTree.deleteNode(myTree.root, 8);
-// myTree.prettyPrint(myTree.root);
+console.log("--------------------------------------------------");
+console.log("Delete node 8:\n");
+myTree.deleteNode(myTree.root, 8);
+myTree.prettyPrint(myTree.root);
 
 //test search
-// console.log("--------------------------------------------------");
-// console.log("Find node 67:\n");
-// myTree.prettyPrint(myTree.find(myTree.root, 67));
+console.log("--------------------------------------------------");
+console.log("Find node 67:\n");
+myTree.prettyPrint(myTree.find(myTree.root, 67));
 
 //test levelOrderForeach
-// console.log("--------------------------------------------------");
-// console.log("Print value of every node (level order):\n");
-// myTree.levelOrderForEach(myTree.root, printValue);
+console.log("--------------------------------------------------");
+console.log("Print value of every node (level order):\n");
+myTree.levelOrderForEach(myTree.root, printValue);
 
 //test inOrderForeach
-// console.log("--------------------------------------------------");
-// console.log("Print value of every node (inorder):\n");
-// myTree.inOrderForEach(myTree.root, printValue);
+console.log("--------------------------------------------------");
+console.log("Print value of every node (inorder):\n");
+myTree.inOrderForEach(myTree.root, printValue);
 
 //test preOrderForeach
-// console.log("--------------------------------------------------");
-// console.log("Print value of every node (preorder):\n");
-// myTree.preOrderForEach(myTree.root, printValue);
+console.log("--------------------------------------------------");
+console.log("Print value of every node (preorder):\n");
+myTree.preOrderForEach(myTree.root, printValue);
 
 //test preOrderForeach
-// console.log("--------------------------------------------------");
-// console.log("Print value of every node (postorder):\n");
-// myTree.postOrderForEach(myTree.root, printValue);
+console.log("--------------------------------------------------");
+console.log("Print value of every node (postorder):\n");
+myTree.postOrderForEach(myTree.root, printValue);
 
 //test height
-// console.log("--------------------------------------------------");
-// console.log(`Height of binary tree: ${myTree.height(myTree.root.val)}`);
+console.log("--------------------------------------------------");
+console.log(`Height of binary tree: ${myTree.height(myTree.root.val)}`);
 
 //test depth
-// console.log("--------------------------------------------------");
-// console.log(`Depth of node 23: ${myTree.depth(23)}`);
+console.log("--------------------------------------------------");
+console.log(`Depth of node 23: ${myTree.depth(23)}`);
 
 //test isBalanced
-// console.log("--------------------------------------------------");
-// console.log(`Is the tree balanced? ${myTree.isBalanced(myTree.root)}`);
 console.log("--------------------------------------------------");
-console.log("Add new node 10:\n");
-myTree.insert(myTree.root, 10);
+console.log(`Is the tree balanced? ${myTree.isBalanced(myTree.root)}`);
+console.log("--------------------------------------------------");
+console.log("Add new nodes 11, 12, 13:\n");
+myTree.insert(myTree.root, 11);
+myTree.insert(myTree.root, 12);
+myTree.insert(myTree.root, 13);
 myTree.prettyPrint(myTree.root);
 console.log(`Is the tree balanced? ${myTree.isBalanced(myTree.root)}`);
 
