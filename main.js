@@ -54,10 +54,17 @@ myTree.prettyPrint(myTree.root);
 // console.log(`Depth of node 23: ${myTree.depth(23)}`);
 
 //test isBalanced
-console.log("--------------------------------------------------");
-console.log(`Is the tree balanced? ${myTree.isBalanced(myTree.root)}`);
+// console.log("--------------------------------------------------");
+// console.log(`Is the tree balanced? ${myTree.isBalanced(myTree.root)}`);
 console.log("--------------------------------------------------");
 console.log("Add new node 10:\n");
 myTree.insert(myTree.root, 10);
+myTree.prettyPrint(myTree.root);
+console.log(`Is the tree balanced? ${myTree.isBalanced(myTree.root)}`);
+
+//test rebalance
+console.log("--------------------------------------------------");
+console.log("Rebalancing tree...\n");
+myTree.rebalance();
 myTree.prettyPrint(myTree.root);
 console.log(`Is the tree balanced? ${myTree.isBalanced(myTree.root)}`);
