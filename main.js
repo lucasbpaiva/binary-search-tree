@@ -46,5 +46,9 @@ myTree.prettyPrint(myTree.root);
 // myTree.postOrderForEach(myTree.root, printValue);
 
 //test height
+// console.log("--------------------------------------------------");
+// console.log(`Height of binary tree: ${myTree.height(myTree.root.val)}`);
+
+//test depth
 console.log("--------------------------------------------------");
-console.log(`Height of binary tree: ${myTree.height(myTree.root.val)}`);
+console.log(`Depth of node 23: ${myTree.depth(23)}`);
