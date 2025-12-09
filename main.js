@@ -50,5 +50,14 @@ myTree.prettyPrint(myTree.root);
 // console.log(`Height of binary tree: ${myTree.height(myTree.root.val)}`);
 
 //test depth
+// console.log("--------------------------------------------------");
+// console.log(`Depth of node 23: ${myTree.depth(23)}`);
+
+//test isBalanced
 console.log("--------------------------------------------------");
-console.log(`Depth of node 23: ${myTree.depth(23)}`);
+console.log(`Is the tree balanced? ${myTree.isBalanced(myTree.root)}`);
+console.log("--------------------------------------------------");
+console.log("Add new node 10:\n");
+myTree.insert(myTree.root, 10);
+myTree.prettyPrint(myTree.root);
+console.log(`Is the tree balanced? ${myTree.isBalanced(myTree.root)}`);
