@@ -44,7 +44,7 @@
     }
 
     // get inorder successor of a node (smallest in right subtree)
-    getSuccessor(node) {
+    #getSuccessor(node) {
         node = node.right;
         while (node !== null && node.left !== null) {
             node = node.left;
@@ -73,7 +73,7 @@
             }
 
             // node with 2 children
-            const successor = this.getSuccessor(root);
+            const successor = this.#getSuccessor(root);
             root.val = successor.val;
             root.right = this.deleteNode(root.right, successor.val);
         }
@@ -146,19 +146,35 @@
         }
     }
 
-    // given the root of a binary tree, return its maximum depth
-    maxHeight(root) {
+    // (Private) given the root of a binary tree, return its maximum depth
+    #maxHeight(root) {
         if (root === null) {
             return -1;
         }
-        return 1 + Math.max(this.maxHeight(root.left), this.maxHeight(root.right));
+        return 1 + Math.max(this.#maxHeight(root.left), this.#maxHeight(root.right));
     }
 
     // returns the height of the node containing the given value
     height(val) {
         let node = this.find(this.root, val);
         if (node === null) return null;
-        return this.maxHeight(node);
+        return this.#maxHeight(node);
+    }
+
+    // (Private) returns depth of node with given value, node must exist in the tree
+    #findNodeDepth(root, val) {
+        let depth = -1;
+        if (root === null) return -1;
+        if (root.val === val) return depth + 1;
+        if (val < root.val) return 1 + this.#findNodeDepth(root.left, val);
+        if (val > root.val) return 1 + this.#findNodeDepth(root.right, val);
+    }
+
+    // returns the depth of the node containing the given value
+    depth(val) {
+        let node = this.find(this.root, val);
+        if (node === null) return null;
+        return this.#findNodeDepth(this.root, val);
     }
 
     // console.log the BST in a structured format
